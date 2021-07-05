@@ -1,14 +1,16 @@
 // Run by Node.js
 
-const readline = require("readline");
-const rl = readline.createInterface({
-	input: process.stdin,
-	output: process.stdout
-});
+let params = 100
 
-rl.on("line", function(line) {
-	console.log(line);
-	rl.close();
-}).on("close", function() {
-	process.exit();
-});
+function getNum(params) {
+    let result = ""
+
+    for(let i =1; i<=params; i++){
+        if(params%i===0){
+            result = result + i + " "
+        }
+    }
+    return result
+}
+
+getNum(params)
